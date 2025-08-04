@@ -1,7 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    namespace 'com.dodola.alloctrack'
     compileSdkVersion 28
+    buildFeatures {
+        buildConfig true
+    }
+    lintOptions {
+        abortOnError false
+    }
     defaultConfig {
         applicationId "com.dodola.alloctrack"
         minSdkVersion 14
