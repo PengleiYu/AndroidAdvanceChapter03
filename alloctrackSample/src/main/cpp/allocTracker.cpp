@@ -414,7 +414,7 @@ JNI_METHOD_DECL(void, dumpAllocationDataInLog)
 bool saveARTAllocationData(SaveAllocationData saveData) {
     JNIEnv *env = facebook::jni::Environment::current();
     {
-        snprintf(saveData.dataFileName, 1024, "%s/%d", storeDataDirectory,
+        snprintf(saveData.dataFileName, 128, "%s/%d", storeDataDirectory,
                  static_cast<int>(time(0)));
         int fd = open(saveData.dataFileName, O_RDWR | O_CREAT | O_CLOEXEC, (mode_t) 0644);
         lseek(fd, 0, SEEK_SET);
